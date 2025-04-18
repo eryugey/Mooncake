@@ -18,11 +18,6 @@
 #include "transfer_engine.h"
 
 namespace mooncake {
-thread_local static Transport::ThreadLocalSliceCache tl_slice_cache;
-
-Transport::ThreadLocalSliceCache &Transport::getSliceCache() {
-    return tl_slice_cache;
-}
 
 Transport::BatchID Transport::allocateBatchID(size_t batch_size) {
     auto batch_desc = new BatchDesc();
